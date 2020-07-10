@@ -4,5 +4,6 @@ This Repo consists the configuration files and related solution templates for th
 
 ## Author
 
-Praveen Kumar D
+Praveen Kumar D \n
+
 E-mail: praveenkumard77@outlook.com

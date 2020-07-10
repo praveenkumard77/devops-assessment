@@ -1,29 +1,16 @@
-# Simple AngularJS Hello World Web Application
+This repo contains the code for building a hello world nodejs application.
+
+Pre-requisites:
+Since the applciations are already running and we need to dockerise the application, We will need the package.json. I have included a test package.json file
+
+Build Docker image:
+
+docker build -t web
 
 
-This is a very simple AngularJS web application made up of two modules; angular-hello-world-service and angular-hello-world-ui.
+Build using docker-compose:
 
-The Docker Compose file deploys the service module as a web application to Tomcat and the UI files to a NGINX instance that also serves as a reverse proxy to Tomcat for REST requests.
+docker-compose up --build
 
 
-## Run from source
-
-To run this stack from source:
-
-```
-$ git clone <repo-name>
-$ cd angular-hello-world
-$ mvn package
-$ docker-compose -f docker-compose-dev.yml up
-```
-
-## Run from binaries
-
-To run this stack from the prebuilt Docker images from Docker Hub:
-
-```
-$ cd angular-hello-world
-$ docker-compose up -d
-```
-
-View the app at http://localhost:8080/
+index.js has been created with simple HTTP server that will serve on port 8080

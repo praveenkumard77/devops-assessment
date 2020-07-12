@@ -3,19 +3,6 @@ variable "AWS_SECRET_KEY" {}
 variable "AWS_REGION" {
   default = "us-west-2"
 }
-variable "ami" {
-  type = "map"
-
-  default = {
-    "us-west-2" = "ami-04169656fea786776"
-    "us-west-2" = "ami-006fce2a9625b177f"
-  }
-}
-
-variable "instance_count" {
-  default = "2"
-}
-
 variable "instance_type" {
   default = "t2.micro"
 }
@@ -24,3 +11,4 @@ variable "vpc_cidr" {
 }
 variable "subnet_cidr" {
   default = "10.0.1.0/24"
+}

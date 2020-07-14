@@ -7,12 +7,24 @@ resource "aws_vpc" "assess" {
   }
 }
 
-resource "aws_instance" "assess-instance" {
+resource "aws_subnet" "assess_sub" {
+  vpc_id     = aws_vpc.assess.id
+  cidr_block = var.subnet_cidr
+
+  tags = {
+    Name = "demo"
+  }
+}
+
+resource "aws_instance" "assess-inst" {
   count         = var.instance_count
   ami           = lookup(var.ami,var.AWS_REGION)
   instance_type = var.instance_type
+  subnet_id = aws_subnet.assess_sub.id
+  tags = {
+    Name = "test-demo"
+  }
 }
-
 resource "aws_vpn_gateway" "assess_vpn" {
   vpc_id = aws_vpc.assess.id
 }
